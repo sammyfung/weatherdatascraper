@@ -1,4 +1,4 @@
-# Weather Data Scraper
+# Global Weather Data Scraper
 
 Weather Data Scraper is an open source project aimed to collect global weather data.
 
