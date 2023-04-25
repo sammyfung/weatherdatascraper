@@ -1,3 +1,6 @@
+[![ci](https://github.com/opsoc/weatherdatascraper/actions/workflows/ci-weather-data-scraper.yml/badge.svg)](https://github.com/opsoc/weatherdatascraper/actions/workflows/ci-weather-data-scraper.yml)
+[![codecov](https://codecov.io/gh/opsoc/weatherdatascraper/branch/main/graph/badge.svg?token=6RKB2AWHIG)](https://codecov.io/gh/opsoc/weatherdatascraper)
+
 # Global Weather Data Scraper
 
 Weather Data Scraper is an open source project aimed to collect global weather data.
