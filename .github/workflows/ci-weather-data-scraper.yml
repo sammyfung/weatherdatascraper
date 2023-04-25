@@ -1,11 +1,11 @@
-name: test-weather-data-scraper
+name: ci-weather-data-scraper
 on:
   pull_request:
   push:
     branches:
     - main
 jobs:
-  test-weather-data-scraper:
+  ci:
     runs-on: ubuntu-latest
     env:
       PYTHON: '3.11'
