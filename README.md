@@ -2,6 +2,13 @@
 
 Weather Data Scraper is an open source project aimed to collect global weather data.
 
+## Quickstart
+
+```
+$ pip install -r requirements.txt
+$ scrapy crawl CurrentWeatherHKO
+```
+
 ## An Example of Current Weather Data in JSON format
 
 ```
