@@ -36,3 +36,7 @@ $ scrapy crawl CurrentWeatherHKO
     "sl_pressure": 1015.1
 },
 ```
+
+## Contribution
+
+You can read CONTRIBUTING.md to see how you can make contribution, and you can sponsor this project on GitHub.
