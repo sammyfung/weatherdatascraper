@@ -119,7 +119,6 @@ class CurrentWeatherHKOSpider(scrapy.Spider):
             if len(data) > 5:
                 for j in range(0,len(data)):
                     if data[j].isdigit():
-                        print(last_station, data)
                         stations[last_station]['humidity'] = int(data[j])
                     elif last_station != '':
                         try:
