@@ -3,23 +3,25 @@
 import scrapy
 from scrapy.selector import Selector
 import logging
-from weatherdatascraper.items import CurrentWeatherItem
+from weatherdatascraper.items import GeneralWeatherItem
 import re, pytz
 from datetime import datetime
 
 
-class CurrentWeatherHKOSpider(scrapy.Spider):
-    name = "CurrentWeatherHKO"
+class HKORegionalWeatherSpider(scrapy.Spider):
+    name = "HKORegionalWeather"
     allowed_domains = ["weather.gov.hk"]
     start_urls = ["https://www.weather.gov.hk/wxinfo/ts/text_readings_c.htm"]
 
-    SOURCE = "HKO"
+    PROVIDER = "HKO"
+    TYPE = "MEASURE"
     STATE = "HK"
     COUNTRY = "HK"
-    TIMEZONE = "HKT"
+    TIMEZONE = "GMT+8"
     TEMPERATURE_UNIT = "C"
     WIND_SPEED_UNIT = "kmh"
     ZIP_CODE = ""
+
 
     # id, e_name, c_name, lat, lon, height
     stations = [
@@ -94,7 +96,7 @@ class CurrentWeatherHKOSpider(scrapy.Spider):
                     last_station = id
                     try:
                         station = stations[last_station]
-                        station['source'] = self.SOURCE
+                        station['provider'] = self.PROVIDER
                         station['country'] = self.COUNTRY
                         station['timezone'] = self.TIMEZONE
                     except KeyError:
@@ -103,7 +105,7 @@ class CurrentWeatherHKOSpider(scrapy.Spider):
                         stations[last_station]['local_time'] = report_time
                         stations[last_station]['utc_time'] = datetime.fromisoformat(report_time).astimezone(pytz.utc).isoformat()
                         stations[last_station]['city'] = e_name
-                    stations[last_station]['source'] = self.SOURCE
+                    stations[last_station]['provider'] = self.PROVIDER
                     stations[last_station]['country'] = self.COUNTRY
                     stations[last_station]['state'] = self.STATE
                     stations[last_station]['timezone'] = self.TIMEZONE
@@ -111,7 +113,7 @@ class CurrentWeatherHKOSpider(scrapy.Spider):
                     stations[last_station]['wind_speed_unit'] = self.WIND_SPEED_UNIT
                     stations[last_station]['latitude'] = lat
                     stations[last_station]['longitude'] = lon
-                    stations[last_station]['sl_height'] = height
+                    stations[last_station]['sea_level_height'] = height
 
             data_line = re.sub('^\s', '', i[6:])
             data_line = re.sub('\*', ' ', data_line)
@@ -165,16 +167,16 @@ class CurrentWeatherHKOSpider(scrapy.Spider):
                     stations[last_station]['max_gust'] = 0
             elif len(data) == 3 and last_station != '':
                 try:
-                    stations[last_station]['sl_pressure'] = float(data[1])
+                    stations[last_station]['sea_level_pressure'] = float(data[1])
                 except ValueError:
-                    stations[last_station]['sl_pressure'] = data[1]
+                    stations[last_station]['sea_level_pressure'] = data[1]
             elif len(data) == 2 and last_station == 'wlp':
                 # Special handling to Wetland Park sea-level pressure.
-                stations[last_station]['sl_pressure'] = data[0]
+                stations[last_station]['sea_level_pressure'] = data[0]
 
 
         for key in stations:
-            station_item = CurrentWeatherItem()
+            station_item = GeneralWeatherItem()
             for key2 in stations[key]:
                 station_item[key2] = stations[key][key2]
             station_items.append(station_item)

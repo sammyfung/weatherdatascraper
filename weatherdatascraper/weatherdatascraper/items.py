@@ -1,16 +1,17 @@
 import scrapy
 
 
-class CurrentWeatherItem(scrapy.Item):
-    # Current Weather Data
-    source = scrapy.Field()
+class GeneralWeatherItem(scrapy.Item):
+    # General Weather Data
+    type = scrapy.Field()
+    provider = scrapy.Field()
     city = scrapy.Field()
     state = scrapy.Field()
     country = scrapy.Field()
     zipcode = scrapy.Field()
     latitude = scrapy.Field()
     longitude = scrapy.Field()
-    sl_height = scrapy.Field()
+    sea_level_height = scrapy.Field()
     timezone = scrapy.Field()
     scraping_time = scrapy.Field()
     local_time = scrapy.Field()
@@ -23,10 +24,10 @@ class CurrentWeatherItem(scrapy.Item):
     wind_speed = scrapy.Field()
     wind_speed_unit = scrapy.Field()
     max_gust = scrapy.Field()
-    sl_pressure = scrapy.Field()
+    sea_level_pressure = scrapy.Field()
     humidity = scrapy.Field()
-    hum_daily_max = scrapy.Field()
-    hum_daily_min = scrapy.Field()
+    humidity_daily_max = scrapy.Field()
+    humidity_daily_min = scrapy.Field()
     snow_depth = scrapy.Field()
     precipitation = scrapy.Field()
 
