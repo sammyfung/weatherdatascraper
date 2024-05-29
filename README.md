@@ -9,31 +9,34 @@ Weather Data Scraper is an open source project aimed to collect global weather d
 
 ```
 $ pip install -r requirements.txt
-$ scrapy crawl CurrentWeatherHKO
+$ cd weatherdatascraper
+$ scrapy crawl HKORegionalWeather
 ```
 
 ## An Example of Current Weather Data in JSON format
 
 ```
 {
-    "scraping_time": "2023-04-25T15:06:13.967261+00:00", 
-    "local_time": "2023-04-25T22:50:00+08:00",
-    "utc_time": "2023-04-25T14:50:00+00:00",
-    "city": "Hong Kong Observatory", 
-    "source": "HKO", 
-    "country": "HK", 
-    "state": "HK", 
-    "timezone": "HKT", 
-    "temp_unit": "C", 
-    "wind_speed_unit": "kmh", 
-    "latitude": 22.30195171, 
-    "longitude": 114.17427393, 
-    "sl_height": 32, 
-    "temperature": 20.9, 
-    "humidity": 86, 
-    "temp_daily_max": 23.7, 
-    "temp_daily_min": 20.9, 
-    "sl_pressure": 1015.1
+{'city': 'Wong Chuk Hang',
+ 'country': 'HK',
+ 'humidity': 68,
+ 'latitude': 22.24777778,
+ 'local_time': '2024-05-29T17:00:00+08:00',
+ 'longitude': 114.17361111,
+ 'max_gust': 31,
+ 'provider': 'HKO',
+ 'scraping_time': '2024-05-29T09:12:13.375557+00:00',
+ 'sea_level_height': 5,
+ 'state': 'HK',
+ 'temp_daily_max': 27.4,
+ 'temp_daily_min': 24.7,
+ 'temp_unit': 'C',
+ 'temperature': 26.8,
+ 'timezone': 'GMT+8',
+ 'utc_time': '2024-05-29T09:00:00+00:00',
+ 'wind_direction': 'E',
+ 'wind_speed': 16,
+ 'wind_speed_unit': 'kmh'}
 },
 ```
 

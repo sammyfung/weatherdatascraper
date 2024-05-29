@@ -32,3 +32,21 @@ class GeneralWeatherItem(scrapy.Item):
     precipitation = scrapy.Field()
 
 
+class TropicalCycloneItem(scrapy.Item):
+    type = scrapy.Field()
+    provider = scrapy.Field()
+    timezone = scrapy.Field()
+    scraping_time = scrapy.Field()
+    local_time = scrapy.Field()
+    utc_time = scrapy.Field()
+    position_time = scrapy.Field()
+    tropical_cyclone_type = scrapy.Field()
+    name = scrapy.Field()
+    code = scrapy.Field()
+    latitude = scrapy.Field()
+    longitude = scrapy.Field()
+    wind_speed_unit = scrapy.Field()
+    wind_speed = scrapy.Field()
+    max_gust = scrapy.Field()
+    pressure = scrapy.Field()
+
