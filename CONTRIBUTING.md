@@ -1,4 +1,4 @@
-# Contributing to Global Weather Data Scraper
+# Contributing to Weather Data Scraper
 
 Thank you for your interests to make contributions.
 

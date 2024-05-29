@@ -1,7 +1,7 @@
 [![ci](https://github.com/opsoc/weatherdatascraper/actions/workflows/ci-weather-data-scraper.yml/badge.svg)](https://github.com/opsoc/weatherdatascraper/actions/workflows/ci-weather-data-scraper.yml)
 [![codecov](https://codecov.io/gh/opsoc/weatherdatascraper/branch/main/graph/badge.svg?token=6RKB2AWHIG)](https://codecov.io/gh/opsoc/weatherdatascraper)
 
-# Global Weather Data Scraper
+# Weather Data Scraper
 
 Weather Data Scraper is an open source project aimed to collect global weather data.
 
@@ -17,7 +17,7 @@ $ scrapy crawl HKORegionalWeather
 
 ```
 {
-{'city': 'Wong Chuk Hang',
+ 'city': 'Wong Chuk Hang',
  'country': 'HK',
  'humidity': 68,
  'latitude': 22.24777778,
@@ -36,8 +36,8 @@ $ scrapy crawl HKORegionalWeather
  'utc_time': '2024-05-29T09:00:00+00:00',
  'wind_direction': 'E',
  'wind_speed': 16,
- 'wind_speed_unit': 'kmh'}
-},
+ 'wind_speed_unit': 'kmh'
+}
 ```
 
 ## Contribution
