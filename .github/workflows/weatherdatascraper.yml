@@ -1,4 +1,4 @@
-name: ci-weather-data-scraper
+name: weatherdatascraper
 on:
   pull_request:
   push:
@@ -23,4 +23,4 @@ jobs:
         run: |
           coverage run -m pytest
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v4
