@@ -1,5 +1,5 @@
-[![ci](https://github.com/opsoc/weatherdatascraper/actions/workflows/ci-weather-data-scraper.yml/badge.svg)](https://github.com/opsoc/weatherdatascraper/actions/workflows/ci-weather-data-scraper.yml)
-[![codecov](https://codecov.io/gh/opsoc/weatherdatascraper/branch/main/graph/badge.svg?token=6RKB2AWHIG)](https://codecov.io/gh/opsoc/weatherdatascraper)
+[![ci](https://github.com/sammyfung/weatherdatascraper/actions/workflows/weatherdatascraper.yml/badge.svg)](https://github.com/sammyfung/weatherdatascraper/actions/workflows/weatherdatascraper.yml)
+[![codecov](https://codecov.io/gh/sammyfung/weatherdatascraper/graph/badge.svg?token=FTBHLM0LEZ)](https://codecov.io/gh/sammyfung/weatherdatascraper)
 
 # Weather Data Scraper
 
